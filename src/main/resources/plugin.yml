@@ -1,0 +1,15 @@
+name: XeraTablist
+version: ${project.version}
+main: Xera.Tablist.XeraTablist
+authors: [Nate Legault, Pistonmaster]
+description: ${project.description}
+softdepend: [PlaceholderAPI]
+folia-supported: true
+commands:
+  tabrconfig:
+    description: Reload the config
+    permission: xera.tablist.reload
+    usage: /tabrconfig
+permissions:
+  xera.tablist.reload:
+    description: Permission to reload XeraTablist.
