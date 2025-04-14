@@ -2,19 +2,21 @@ package Xera.Tablist;
 
 import lombok.Getter;
 import me.clip.placeholderapi.PlaceholderAPI;
+import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.logging.Logger;
 
 public class XeraTablist extends JavaPlugin implements Listener {
     public static long startTime;
     public static boolean hasPapi = false;
+    @Getter
+    private static MiniMessage miniMessage = MiniMessage.miniMessage();
     @Getter
     public String header;
     @Getter
@@ -31,7 +33,7 @@ public class XeraTablist extends JavaPlugin implements Listener {
         this.getCommand("tabrconfig").setExecutor(new ReloadCommand(this));
         getServer().getGlobalRegionScheduler().runAtFixedRate(
             this,
-            task -> new Tablist(this).run(),
+            task -> new TabList(this).run(),
             20,
             getConfig().getInt("delay")
         );
@@ -43,7 +45,7 @@ public class XeraTablist extends JavaPlugin implements Listener {
 
         getServer().getGlobalRegionScheduler().runAtFixedRate(
             this,
-            task -> new Tablist(this).run(),
+            task -> new TabList(this).run(),
             20,
             getConfig().getInt("delay")
 );
