@@ -19,6 +19,7 @@ public class TabList implements Runnable {
                         TabUtil.chatColorLegacyToComponent(XeraTablist.parseText(player, plugin.getHeader())),
                         TabUtil.chatColorLegacyToComponent(XeraTablist.parseText(player, plugin.getFooter()))
                 );
+                player.playerListName(player.displayName());
             }
         } catch (Exception e) {
             e.printStackTrace();
